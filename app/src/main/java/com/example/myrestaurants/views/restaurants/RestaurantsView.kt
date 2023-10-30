@@ -40,6 +40,13 @@ class RestaurantsView : AppCompatActivity(), RestaurantListener {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.item_map -> { presenter.doShowRestaurantMap() }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onRestaurantClick(restaurant: RestaurantModel, position: Int) {
         this.position = position
         presenter.doEditRestaurant(restaurant, this.position)

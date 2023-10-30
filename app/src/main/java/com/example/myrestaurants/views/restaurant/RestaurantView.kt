@@ -41,18 +41,7 @@ class RestaurantView : AppCompatActivity() {
         binding.lastVisit.setOnClickListener {
             showDatePicker()
         }
-/*
-        binding.chooseImage.setOnClickListener {
-            presenter.cacheRestaurant(binding.restaurantName.text.toString(), binding.description.text.toString())
-            presenter.doSelectImage()
-        }
-        */
-/*
-        binding.restaurantLocation.setOnClickListener {
-            presenter.cacheRestaurant(binding.restaurantName.text.toString(), binding.description.text.toString())
-            presenter.doSetLocation()
-        }
-*/
+
         binding.btnAdd.setOnClickListener {
             if (binding.restaurantName.text.toString().isEmpty()) {
                 Snackbar.make(binding.root, R.string.enter_restaurantName, Snackbar.LENGTH_LONG)

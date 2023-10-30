@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.myrestaurants.activities.RestaurantsMapActivity
 import com.example.myrestaurants.views.restaurant.RestaurantView
 import com.example.myrestaurants.main.MainApp
 import com.example.myrestaurants.models.RestaurantModel
@@ -32,6 +33,11 @@ class RestaurantsPresenter(private val view: RestaurantsView) {
         launcherIntent.putExtra("restaurant_edit", restaurant)
         position = pos
         refreshIntentLauncher.launch(launcherIntent)
+    }
+
+    fun doShowRestaurantMap() {
+        val launcherIntent = Intent(view, RestaurantsMapActivity::class.java)
+        mapIntentLauncher.launch(launcherIntent)
     }
 
     private fun registerRefreshCallback() {

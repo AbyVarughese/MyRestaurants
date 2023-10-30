@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
     <application
         android:name="com.example.myrestaurants.main.MainApp"
@@ -15,14 +16,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRestaurants"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.RestaurantsMapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_restaurants"
+            android:theme="@style/Theme.MyRestaurants" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
 
         <activity
             android:name=".views.restaurants.RestaurantsView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -30,6 +42,7 @@
         <activity
             android:name=".views.restaurant.RestaurantView"
             android:windowSoftInputMode="stateHidden|adjustPan">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
