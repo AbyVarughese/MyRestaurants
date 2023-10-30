@@ -29,6 +29,10 @@ class RestaurantsView : AppCompatActivity(), RestaurantListener {
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
         loadRestaurants()
+
+        binding.fabAdd.setOnClickListener {
+            presenter.doAddRestaurant()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -38,6 +42,7 @@ class RestaurantsView : AppCompatActivity(), RestaurantListener {
 
     override fun onRestaurantClick(restaurant: RestaurantModel, position: Int) {
         this.position = position
+        presenter.doEditRestaurant(restaurant, this.position)
     }
 
     private fun loadRestaurants() {

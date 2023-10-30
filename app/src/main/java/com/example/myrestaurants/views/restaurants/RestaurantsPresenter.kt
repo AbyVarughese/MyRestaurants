@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.myrestaurants.views.restaurant.RestaurantView
 import com.example.myrestaurants.main.MainApp
 import com.example.myrestaurants.models.RestaurantModel
 
@@ -20,6 +21,18 @@ class RestaurantsPresenter(private val view: RestaurantsView) {
     }
 
     fun getRestaurants() = app.restaurants.findAll()
+
+    fun doAddRestaurant() {
+        val launcherIntent = Intent(view, RestaurantView::class.java)
+        refreshIntentLauncher.launch(launcherIntent)
+    }
+
+    fun doEditRestaurant(restaurant: RestaurantModel, pos: Int) {
+        val launcherIntent = Intent(view, RestaurantView::class.java)
+        launcherIntent.putExtra("restaurant_edit", restaurant)
+        position = pos
+        refreshIntentLauncher.launch(launcherIntent)
+    }
 
     private fun registerRefreshCallback() {
         refreshIntentLauncher =
