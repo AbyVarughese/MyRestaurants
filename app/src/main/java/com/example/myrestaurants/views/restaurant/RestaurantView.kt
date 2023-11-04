@@ -74,7 +74,7 @@ class RestaurantView : AppCompatActivity() {
             R.id.item_delete -> {
                 presenter.doDelete()
             }
-            R.id.item_cancel -> {
+            R.id.item_back -> {
                 presenter.doCancel()
             }
         }

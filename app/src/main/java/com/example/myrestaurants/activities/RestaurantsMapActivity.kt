@@ -3,7 +3,10 @@ package com.example.myrestaurants.activities
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myrestaurants.R
 import com.example.myrestaurants.databinding.ActivityRestaurantsMapBinding
 import com.example.myrestaurants.databinding.ContentRestaurantsMapBinding
 import com.example.myrestaurants.main.MainApp
@@ -35,6 +38,19 @@ class RestaurantsMapActivity : AppCompatActivity(),GoogleMap.OnMarkerClickListen
             map = it
             configureMap()
         }
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_maps, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.item_back -> {
+                this.finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun configureMap() {

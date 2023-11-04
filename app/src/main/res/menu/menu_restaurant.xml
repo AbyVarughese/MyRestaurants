@@ -8,7 +8,7 @@
         android:title="@string/menu_deleteRestaurant"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/item_cancel"
+        android:id="@+id/item_back"
         android:title="@string/menu_cancelRestaurant"
         app:showAsAction="always"/>
 </menu>

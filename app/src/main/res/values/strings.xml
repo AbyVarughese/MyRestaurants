@@ -7,6 +7,7 @@
     <string name="hint_restaurantLastVisited">Last visited</string>
     <string name="menu_addRestaurant">Add</string>
     <string name="menu_cancelRestaurant">Cancel</string>
+    <string name="menu_back">Back</string>
     <string name="enter_restaurantName"> Please enter name </string>
     <string name="save_restaurant"> Save Restaurant </string>
     <string name="button_addImage"> Add Image </string>
